@@ -1,9 +1,12 @@
 package com.example.menus;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,5 +26,23 @@ public class MainActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.menu_principal ,menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        //Click que foi escolhido pelo usuário
+        switch (item.getItemId()) {
+            case R.id.itemSalvar :
+                Toast.makeText(MainActivity.this, "Item salvar", Toast.LENGTH_SHORT).show();
+                break;
+
+                case R.id.itemEditar :
+                Toast.makeText(MainActivity.this, "Item editar", Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
